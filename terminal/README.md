@@ -1,53 +1,44 @@
-# Getting Started with Create React App
+# Application Terminal Simulé
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ce projet est une application simple de terminal simulé construite en utilisant React, Vite.js et TypeScript. L'application simule une interface en ligne de commande où les utilisateurs peuvent entrer diverses commandes, et elle répond avec la sortie appropriée. Ce projet a été développé dans le cadre d'une évaluation pratique pour démontrer la maîtrise de la gestion de projet, de la collaboration avec Git, et du développement web en utilisant des frameworks JavaScript modernes.
 
-## Available Scripts
+## Membres
 
-In the project directory, you can run:
+| Nom complet          | Adresse email étudiante                 | Rôle            |
+|----------------------|-----------------------------------------|-----------------|
+| Bilal Mezrai         | bilal.mezrai@ecole-isitech.com          | Product Owner   |
+| Nikolaï ZLODEYEV     | nikolai.zlodeyev@ecole-isitech.fr       | Développeur Senior |
+| Anas El Maliki       | anas.elmaliki@ecole-isitech.fr          | Développeur Senior |
+| Massinissa AitMahamed| massinissa.aitmahamed@ecole-isitech.fr  | Développeur Senior |
 
-### `npm start`
+## Note d'intention
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+L'objectif de ce projet est de développer un terminal simulé capable de répondre aux commandes utilisateur avec des sorties dynamiques. Le projet est conçu pour appliquer les principes clés de l'ingénierie logicielle, y compris le contrôle de version, les stratégies de branching, et l'intégration/déploiement continu, tout en encourageant la collaboration entre les membres de l'équipe.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Choix Techniques
 
-### `npm test`
+- **React avec TypeScript :** Choisi pour son architecture basée sur les composants et la sécurité offerte par le typage, ce qui aide à détecter les erreurs tôt dans le développement.
+- **Vite.js :** Sélectionné pour ses temps de build rapides et son expérience de développement moderne, qui simplifie la configuration et améliore la productivité des développeurs.
+- **Vercel :** Utilisé pour le déploiement continu afin de s'assurer que la dernière version de l'application est toujours en ligne et accessible.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Défis et Solutions
 
-### `npm run build`
+- **Défi :** Gestion du branching et des pull requests au sein de l'équipe.
+  - **Solution :** Nous avons mis en place une stratégie de branching incluant des branches feature pour chaque développeur, une branche de pré-production pour les tests d'intégration, et une branche de production pour les versions stables. Les pull requests sont utilisées pour réviser le code avant le merge.
+  
+- **Défi :** Implémentation des réponses dynamiques aux commandes.
+  - **Solution :** Les commandes comme `date` sont gérées en vérifiant l'entrée utilisateur et en utilisant JavaScript pour générer dynamiquement la sortie appropriée.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Défi :** Assurer la qualité et la cohérence du code.
+  - **Solution :** Nous avons utilisé TypeScript pour la sécurité des types, ESLint pour le linting, et configuré un workflow GitHub Actions pour exécuter des tests et des linters à chaque push.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Pour Commencer
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Bienvenue dans le guide de configuration de l'environnement de développement de `terminal-app`. Ce document fournit des instructions complètes pour faciliter une configuration fluide et cohérente dans divers environnements de développement.
 
-### `npm run eject`
+### Installation des Dépendances
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Pour installer les dépendances du projet, exécutez :
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-
-Projet Terminal avec Bilal MEZRAI, Anas EL MALIKI, Nikolaï ZLODEYEV, Massinissa AITMAHAMED
-
-Notre projet est de faire un terminal fictif avec des commandes de bases fonctionnel.
-
-test 7
+```bash
+npm install
