@@ -1,0 +1,131 @@
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #222;
+}
+/* src/components/Navbar.css */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-item {
+  margin-left: 20px;
+}
+
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar-link:hover {
+  text-decoration: underline;
+}
+
+
+.terminal {
+  background-color: #000;
+  color: #0f0;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 0;
+  width: 600px;
+  max-width: 100%;
+  height: 400px;
+  max-height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.fakeMenu {
+  background-color: #333;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.fakeButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.fakeButtons .material-icons {
+  color: #f00; /* Default color for the close button */
+  cursor: pointer;
+}
+
+.fakeButtons .material-icons:nth-child(2) {
+  color: #ff0; /* Yellow color for minimize */
+}
+
+.fakeButtons .material-icons:nth-child(3) {
+  color: #0f0; /* Green color for maximize */
+}
+
+.fakeTitle {
+  color: #ccc;
+}
+
+.output-area {
+  padding: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.command {
+  margin: 0;
+}
+
+.output {
+  margin: 0 0 10px 0;
+}
+
+.input-area {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #222;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.input-area input {
+  background-color: transparent;
+  color: #0f0;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  flex-grow: 1;
+}
