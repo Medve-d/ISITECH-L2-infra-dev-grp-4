@@ -44,3 +44,19 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+<<<<<<< HEAD
+=======
+
+
+Projet Terminal avec Bilal MEZRAI, Anas EL MALIKI, Nikolaï ZLODEYEV, Massinissa AITMAHAMED
+
+Notre projet est de faire un terminal fictif avec des commandes de bases fonctionnel.
+
+Feature 1 Nikolaï ZLODEYEV
+
+Feature 2 Bilal MEZRAI
+
+Feature 3 Anas EL MALIKI
+
+Feature 4 Massinissa AITMAHAMED
+>>>>>>> 28bf39c (nettoyage)
