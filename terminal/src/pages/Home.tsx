@@ -1,13 +1,12 @@
-// src/App.tsx
 import React from 'react';
-import Terminal from '../components/Terminal';
+import Terminal from '../components/Terminal'; // Chemin d'import ajusté selon la structure
 
 const Home: React.FC = () => {
   return (
-    <div className="App">
+    <div>
       <Terminal />
     </div>
   );
-};
+}
 
 export default Home;
