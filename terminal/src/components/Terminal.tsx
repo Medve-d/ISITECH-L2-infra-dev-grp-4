@@ -1,33 +1,40 @@
 import React, { useState } from 'react';
+import "../index.css"
 
-// Define the type for a command with its output
 type Command = {
   command: string;
   output: string;
 };
 
 const Terminal: React.FC = () => {
-  // State to hold the list of commands and their outputs
+
   const [commands, setCommands] = useState<Command[]>([]);
-  // State to hold the current input value
   const [currentInput, setCurrentInput] = useState('');
 
-  // Handle input when the user presses a key
+
   const handleInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    // Process the command
     if (e.key === 'Enter') {
-      // Logic to handle command execution should be added here
-      // For example, you can process the command and update the state
-      
-      // Reset input field after processing
-      setCurrentInput(''); 
+      const output = handleCommand(currentInput);
+      setCommands([...commands, { command: currentInput, output }]);
+      setCurrentInput(''); // Reset input field after processing
     }
   };
 
-  // Placeholder function to handle commands; this is where you can add logic
+  // Function to handle commands and return their output
   const handleCommand = (command: string): string => {
-    // Add your command handling logic here
-    // This function should return the output for the given command
-    return `Command not found: ${command}`;
+    const args = command.trim().split(' ').slice(1).join(' ');
+
+    switch (command.trim()) {
+      case 'help':
+        return 'Commands:\n- help: Show this help message\n- version: Show the version information\n- about: About this terminal';
+      case 'version':
+        return 'Terminal v1.0.0'; // Adjust version as needed
+      case 'about':
+        return 'This is a simple terminal simulation built with React and TypeScript.';
+      default:
+        return `Command not found: ${command}`;
+    }
   };
 
   return (
