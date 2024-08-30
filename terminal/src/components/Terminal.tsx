@@ -31,6 +31,8 @@ const Terminal: React.FC = () => {
   };
 
   return (
+    <div className='terminaContainer'>
+      
     <div className="terminal">
       {/* Fake menu bar (styling and functionality can be adjusted) */}
       <div className="fakeMenu">
@@ -62,6 +64,7 @@ const Terminal: React.FC = () => {
           autoFocus
         />
       </div>
+    </div>
     </div>
   );
 };
