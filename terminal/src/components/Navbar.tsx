@@ -1,12 +1,11 @@
 // Navbar.tsx
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom'; 
+import { Link } from 'react-router-dom'; 
 import logo from '../images/G4.jpg'; 
 
  
 
-function Navbar() { 
-  const navigate = useNavigate(); 
+function Navbar() {  
   return (
     <nav className="navbar">
       <div className="logoContainer">
