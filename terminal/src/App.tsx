@@ -1,5 +1,6 @@
 // App.tsx
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './index.css';
 
 // pages & components
 import Navbar from './components/Navbar';

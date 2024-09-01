@@ -1,40 +1,67 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import "../index.css";
 
-// Define the type for a command with its output
 type Command = {
   command: string;
   output: string;
 };
 
 const Terminal: React.FC = () => {
-  // State to hold the list of commands and their outputs
   const [commands, setCommands] = useState<Command[]>([]);
-  // State to hold the current input value
   const [currentInput, setCurrentInput] = useState('');
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
-  // Handle input when the user presses a key
+  // UseEffect to handle adding/removing classes for dark/light mode
+  useEffect(() => {
+    const terminalElement = document.querySelector('.terminal');
+    if (isDarkMode) {
+      terminalElement?.classList.add('dark');
+      terminalElement?.classList.remove('light');
+    } else {
+      terminalElement?.classList.add('light');
+      terminalElement?.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
+  const toggleMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   const handleInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      // Logic to handle command execution should be added here
-      // For example, you can process the command and update the state
+      const output = handleCommand(currentInput); 
       
-      // Reset input field after processing
-      setCurrentInput(''); 
+      if (currentInput.trim() !== 'clear') {
+        setCommands([...commands, { command: currentInput, output }]);
+      }
+      
+      setCurrentInput('');
     }
   };
 
-  // Placeholder function to handle commands; this is where you can add logic
   const handleCommand = (command: string): string => {
-    // Add your command handling logic here
-    // This function should return the output for the given command
-    return `Command not found: ${command}`;
+    switch (command.trim()) {
+      case 'help':
+        return 'Commands:\n- help: Show this help message\n- version: Show the version information\n- about: About this terminal\n- toggle-mode: Switch between dark and light mode\n- clear: Clear the terminal output';
+      case 'version':
+        return 'Terminal v1.0.0';
+      case 'about':
+        return 'This is a simple terminal simulation built with React and TypeScript.';
+      case 'toggle-mode':
+        toggleMode();
+        return `Switched to ${isDarkMode ? 'light' : 'dark'} mode`;
+      case 'clear':
+        setCommands([]); 
+        return ''; 
+      default:
+        return `Command not found: ${command}`;
+    }
   };
 
   return (
     <div className='terminaContainer'>
       
     <div className="terminal">
-      {/* Fake menu bar (styling and functionality can be adjusted) */}
       <div className="fakeMenu">
         <div className="fakeButtons">
           <span className="material-icons">close</span>
@@ -43,8 +70,10 @@ const Terminal: React.FC = () => {
         <div className="fakeTitle">
           <h3>Terminal</h3>
         </div>
+        <button className="toggle-button" onClick={toggleMode}>
+          Switch to {isDarkMode ? 'Light' : 'Dark'} Mode
+        </button>
       </div>
-      {/* Output area to display command history */}
       <div className="output-area">
         {commands.map((cmd, index) => (
           <div key={index}>
@@ -53,7 +82,6 @@ const Terminal: React.FC = () => {
           </div>
         ))}
       </div>
-      {/* Input area for user to type commands */}
       <div className="input-area">
         <span>&gt;&nbsp;&nbsp;</span>
         <input
