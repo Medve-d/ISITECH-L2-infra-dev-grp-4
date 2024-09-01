@@ -21,6 +21,8 @@ L'objectif de ce projet est de développer un terminal simulé capable de répon
 - **Vite.js :** Sélectionné pour ses temps de build rapides et son expérience de développement moderne, qui simplifie la configuration et améliore la productivité des développeurs.
 - **Vercel :** Utilisé pour le déploiement continu afin de s'assurer que la dernière version de l'application est toujours en ligne et accessible.
 
+Lien vercel : https://isitech-l2-infra-dev-grp-4-2ba8-clmufqljf.vercel.app/
+
 ### Défis et Solutions
 
 - **Défi :** Gestion du branching et des pull requests au sein de l'équipe.
@@ -42,3 +44,6 @@ Pour installer les dépendances du projet, exécutez :
 
 ```bash
 npm install
+
+
+lien vercel : https://terminalgroup4.vercel.app/
