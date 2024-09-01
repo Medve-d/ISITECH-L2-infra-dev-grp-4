@@ -1,7 +1,4 @@
-
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-
-
 
 html, body {
   height: 100%;
@@ -10,12 +7,15 @@ html, body {
   align-items: center;
   justify-content: center;
   background-color: #222;
+  font-size: 16px; /* Base font size */
 }
-/* src/components/Navbar.css */
+
+/* Navbar */
 .navbar {
   background-color: #333;
   color: #fff;
   padding: 10px 20px;
+  width: 100%;
 }
 
 .navbar-container {
@@ -50,7 +50,7 @@ html, body {
   text-decoration: underline;
 }
 
-
+/* Terminal */
 .terminal {
   background-color: #000;
   color: #0f0;
@@ -128,4 +128,68 @@ html, body {
   outline: none;
   font-family: inherit;
   flex-grow: 1;
+}
+
+/* Responsive Design */
+
+/* Small devices (tablets, 600px and below) */
+@media (max-width: 600px) {
+  .navbar-logo {
+    font-size: 20px;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-item {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .navbar-link {
+    font-size: 16px;
+  }
+
+  .terminal {
+    width: 100%;
+    height: auto;
+  }
+
+  .output-area {
+    padding: 10px;
+  }
+
+  .input-area {
+    padding: 10px;
+  }
+}
+
+/* Extra small devices (phones, 480px and below) */
+@media (max-width: 480px) {
+  .navbar-logo {
+    font-size: 18px;
+  }
+
+  .navbar-link {
+    font-size: 14px;
+  }
+
+  .terminal {
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .fakeMenu {
+    padding: 5px;
+  }
+
+  .output-area {
+    padding: 5px;
+  }
+
+  .input-area {
+    padding: 5px;
+  }
 }
