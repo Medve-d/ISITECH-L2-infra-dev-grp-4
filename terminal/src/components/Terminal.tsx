@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../index.css";
 
 type Command = {
@@ -9,15 +9,19 @@ type Command = {
 const Terminal: React.FC = () => {
   const [commands, setCommands] = useState<Command[]>([]);
   const [currentInput, setCurrentInput] = useState('');
+  const [startTime, setStartTime] = useState(performance.now());
 
-  // Simuler un répertoire pour la commande ls
   const directory = ['file1.txt', 'file2.txt', 'folder1', 'folder2'];
+
+  useEffect(() => {
+    setStartTime(performance.now());
+  }, []);
 
   const handleInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       const output = handleCommand(currentInput);
       setCommands([...commands, { command: currentInput, output }]);
-      setCurrentInput(''); // Réinitialiser le champ d'entrée après traitement
+      setCurrentInput('');
     }
   };
 
@@ -36,16 +40,21 @@ const Terminal: React.FC = () => {
       case 'ls':
         return directory.join('\n');
       case 'pwd':
-        return '/home/user'; // Simuler un répertoire courant
+        return '/home/user';
       case 'echo':
         return args || 'No message provided';
       case 'clear':
-        setCommands([]); // Effacer l'historique des commandes
+        setCommands([]);
         return '';
       case 'whoami':
-        return 'user'; // Simuler un utilisateur courant
+        return 'user';
       case 'uptime':
-        return 'System uptime is 3 days, 4 hours, 23 minutes'; // Simuler un temps de fonctionnement
+        const elapsedTime = Math.floor((performance.now() - startTime) / 1000);
+        const days = Math.floor(elapsedTime / 86400);
+        const hours = Math.floor((elapsedTime % 86400) / 3600);
+        const minutes = Math.floor((elapsedTime % 3600) / 60);
+        const seconds = elapsedTime % 60;
+        return `System uptime is ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
       default:
         return `Command not found: ${command}`;
     }
@@ -53,7 +62,6 @@ const Terminal: React.FC = () => {
 
   return (
     <div className="terminal">
-      {/* Fake menu bar (styling and functionality can be adjusted) */}
       <div className="fakeMenu">
         <div className="fakeButtons">
           <span className="material-icons">close</span>
@@ -63,7 +71,6 @@ const Terminal: React.FC = () => {
           <h3>Terminal</h3>
         </div>
       </div>
-      {/* Output area to display command history */}
       <div className="output-area">
         {commands.map((cmd, index) => (
           <div key={index}>
@@ -72,7 +79,6 @@ const Terminal: React.FC = () => {
           </div>
         ))}
       </div>
-      {/* Input area for user to type commands */}
       <div className="input-area">
         <span>&gt;&nbsp;&nbsp;</span>
         <input
