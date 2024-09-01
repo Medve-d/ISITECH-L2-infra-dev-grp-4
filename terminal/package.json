@@ -20,7 +20,7 @@
     "test": "jest",
     "type-check": "tsc --noEmit",
     "start": "react-scripts start",
-    "build": "npm install --legacy-peer-deps && react-scripts build",
+    "build": "react-scripts build",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "test:e2e": "npx playwright test",
