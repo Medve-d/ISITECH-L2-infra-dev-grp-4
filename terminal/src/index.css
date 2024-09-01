@@ -355,3 +355,64 @@ html, body {
   background-color: #bbb;
 }
 
+
+@media (max-width: 600px) {
+  .navbar-logo {
+    font-size: 20px;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-item {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .navbar-link {
+    font-size: 16px;
+  }
+
+  .terminal {
+    width: 100%;
+    height: auto;
+  }
+
+  .output-area {
+    padding: 10px;
+  }
+
+  .input-area {
+    padding: 10px;
+  }
+}
+
+/* Extra small devices (phones, 480px and below) */
+@media (max-width: 480px) {
+  .navbar-logo {
+    font-size: 18px;
+  }
+
+  .navbar-link {
+    font-size: 14px;
+  }
+
+  .terminal {
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .fakeMenu {
+    padding: 5px;
+  }
+
+  .output-area {
+    padding: 5px;
+  }
+
+  .input-area {
+    padding: 5px;
+  }
+}
