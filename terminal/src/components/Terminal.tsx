@@ -30,7 +30,12 @@ const Terminal: React.FC = () => {
   const handleInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       const output = handleCommand(currentInput);
-      setCommands([...commands, { command: currentInput, output }]);
+      
+      // If the command is 'clear', we don't add it to the commands state
+      if (currentInput.trim() !== 'clear') {
+        setCommands([...commands, { command: currentInput, output }]);
+      }
+      
       setCurrentInput('');
     }
   };
@@ -38,7 +43,7 @@ const Terminal: React.FC = () => {
   const handleCommand = (command: string): string => {
     switch (command.trim()) {
       case 'help':
-        return 'Commands:\n- help: Show this help message\n- version: Show the version information\n- about: About this terminal\n- toggle-mode: Switch between dark and light mode';
+        return 'Commands:\n- help: Show this help message\n- version: Show the version information\n- about: About this terminal\n- toggle-mode: Switch between dark and light mode\n- clear: Clear the terminal output';
       case 'version':
         return 'Terminal v1.0.0';
       case 'about':
@@ -46,6 +51,9 @@ const Terminal: React.FC = () => {
       case 'toggle-mode':
         toggleMode();
         return `Switched to ${isDarkMode ? 'light' : 'dark'} mode`;
+      case 'clear':
+        setCommands([]); 
+        return ''; 
       default:
         return `Command not found: ${command}`;
     }
